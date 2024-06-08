@@ -1,0 +1,115 @@
+main header {
+    display: flex;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+}
+
+.cards .card h2 {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+
+img {
+    width: 20px;
+    margin-left: 40px;
+
+    cursor: pointer;
+}
+
+.modal {
+    width: 80px;
+    height: 100px;
+    background-color: white;
+}
+
+main .cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-top: 1rem;
+}
+
+main .cards .card {
+    display: block;
+    align-items: center;
+    background-color: #2f3644;
+
+    padding: 10px 10px;
+    width: 95%;
+
+    border-radius: 7px;
+    margin-top: 40px;
+}
+
+.cards .card header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card header h2 {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    color: #d2daf5;
+    font-size: 1.7rem;
+}
+
+.line {
+    background-color: #3e445b;
+    height: 2px;
+}
+
+.cardInfos {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.infos {
+    font-size: 0.9rem;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    color: #b3bacf;
+    margin: 2px;
+}
+
+.Sinopse {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    color: #b3bacf;
+    margin: 10;
+}
+
+a.cardInfos {
+    align-items: center;
+}
+
+.cardInfos button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 10px;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    color: #3e445b;
+    font-size: 1.3rem;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px 5px;
+    width: 98%;
+}
+
+.cardInfos button:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    scale: 1.02;
+}
