@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./style.css";
+import Header from "../../components/Header";
 
 function Resumo() {
     const { id } = useParams();
@@ -20,6 +21,7 @@ function Resumo() {
 
     return (
         <div>
+            <Header />
             <main>
                 <div className="cards">
                     <div className="card">
@@ -38,6 +40,9 @@ function Resumo() {
                             </div>
                             <Link className="cardInfos" to={"/"}>
                                 <button>Voltar</button>
+                            </Link>
+                            <Link className="cardInfos" to={`/editar/${ler.id}`}>
+                                <button>Editar</button>
                             </Link>
                         </div>
                     </div>
