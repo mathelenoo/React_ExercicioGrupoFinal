@@ -5,6 +5,8 @@ p.Error-message {
 main .cards .card {
     padding: 30px;
     margin-block: 1rem;
+    border: 5px solid #470A00;
+    background-color: bisque;
 }
 
 
@@ -17,18 +19,19 @@ main .cards {
     width: 100%;
 }
 
-
+/* bisque; */
+/* rgb(126, 96, 60); */
 
 .cards .card h1 {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 700;
-    color: #d2daf5;
+    color: #470A00;
     font-size: 1.7rem;
     text-align: center;
 }
 
 .line {
-    background-color: #3e445b;
+    background-color: #470A00;
     height: 2px;
     width: 100%;
     margin: 20px 0;
@@ -37,7 +40,7 @@ main .cards {
 .cards .card label {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 500;
-    color: #b3bacf;
+    color: #470A00;
     margin-bottom: 5px;
 }
 
@@ -51,9 +54,9 @@ main .cards {
     padding: 10px;
     margin-bottom: 2px;
     border-radius: 5px;
-    border: 1.2px solid #b3bacf;
-    background-color: #3e445b;
-    color: #d2daf5;
+    border: 1.2px solid #470A00;
+    background-color: rgb(219, 197, 170);
+    color: #470A00;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
 }
@@ -87,8 +90,8 @@ main .cards {
     margin: 10px 0;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 500;
-    color: #3e445b;
-    background-color: #d2daf5;
+    color: #470A00;
+    background-color: rgb(219, 197, 170);
     font-size: 1.3rem;
     border: 0;
     border-radius: 10px;
@@ -131,8 +134,8 @@ form {
     margin: 10px 0;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 500;
-    color: #3e445b;
-    background-color: #d2daf5;
+    color: #470A00;
+    background-color: rgb(219, 197, 170);
     font-size: 1.3rem;
     border: 0;
     border-radius: 10px;

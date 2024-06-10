@@ -11,8 +11,8 @@ function Resumo() {
 
     useEffect(() => {
         axios
-            // .get(`http://localhost:8080/livros/${id}`)
-            .get(`https://6662522a62966e20ef0839e2.mockapi.io/livros/${id}`)
+            .get(`http://localhost:8080/livros/${id}`)
+            // .get(`https://6662522a62966e20ef0839e2.mockapi.io/livros/${id}`)
             .then((response) => {
                 setLer(response.data);
             })

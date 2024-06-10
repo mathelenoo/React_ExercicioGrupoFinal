@@ -100,8 +100,8 @@ function Editar() {
 
   function deleteLivro(id) {
     axios
-      // .delete(`http://localhost:8080/livros/${id}`)
-      .delete(`https://6662522a62966e20ef0839e2.mockapi.io/livros/${id}`)
+      .delete(`http://localhost:8080/livros/${id}`)
+      // .delete(`https://6662522a62966e20ef0839e2.mockapi.io/livros/${id}`)
       .then(() => {
         setLivro(livro.filter((livro) => livro.id != id));
         navigate("/");
