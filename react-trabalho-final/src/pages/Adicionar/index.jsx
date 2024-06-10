@@ -5,6 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import "./style.css";
+import { useState } from "react";
 
 const validationPost = yup.object().shape({
   titulo: yup
@@ -34,10 +35,35 @@ const validationPost = yup.object().shape({
     .string()
     .required("Informe a editora")
     .max(30, "Maximo de 30 caracteres"),
+  // imagem: yup
+  //   .mixed()
+  //   .required("Uma imagem é necessaria")
+  //   .test(
+  //     "fileType",
+  //     "Tipo de arquivo não suportado",
+  //     (value) =>
+  //       !value ||
+  //       (value && ["image/jpeg", "image/png", "image/gif"].includes(value.type))
+  //   ),
 });
 
 function Adicionar() {
+  const [preview, setPreview] = useState(null);
+  const [image, setImage] = useState(null);
+
   let navigate = useNavigate();
+
+  const handleImageChange = (e) => {
+    const file = e.currentTarget.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+    setImage(file);
+  };
 
   const {
     register,
@@ -45,13 +71,30 @@ function Adicionar() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(validationPost) });
 
-  const addPost = (data) =>
+  const addPost = async (data) => {
+    const file = new Blob([image], {
+      type: image.type,
+    });
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append(
+      "livro",
+      new Blob([JSON.stringify(data)], { type: "application/json" })
+    );
+
+    console.log(data);
     axios
-      .post(`http://localhost:8080/livros`, data)
+      .post(`http://localhost:8080/livros`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
       .then(() => {
         navigate("/");
       })
       .catch(() => console.log("Falha na requisição"));
+  };
 
   return (
     <div>
@@ -96,6 +139,24 @@ function Adicionar() {
               />
               <p className="Error-message">{errors.sinopse?.message}</p>
 
+              <div>
+                <label>Imagem</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleImageChange(e)}
+                  onClick={(e) => {
+                    e.target.value = null;
+                  }}
+                />
+                <p className="Error-message">{errors.imagem?.message}</p>
+              </div>
+              {/* {preview && ( 
+              <div>
+                <h3>Imagem Livro:</h3>
+                <img src={preview} alt="Imagem preview" style={{ width: '300px', height: 'auto' }} />
+              </div>
+            )} */}
               <div className="card-add">
                 <button>Adicionar</button>
               </div>
