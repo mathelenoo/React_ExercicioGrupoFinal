@@ -13,22 +13,7 @@ function Header() {
           </li>
           <li className="navbar-item">
             <Link to={"/livros"}>
-              <p>Adicionar</p>
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link>
-              <p>Editar</p>
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link>
-              <p>Deletar</p>
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link to={"/resumo/:id"}>
-              <p>Ver Resumo</p>
+              <p>Adicionar Livro</p>
             </Link>
           </li>
         </ul>
