@@ -12,7 +12,7 @@ function Header() {
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to={"/adicionar"}>
+            <Link to={"/livros"}>
               <p>Adicionar</p>
             </Link>
           </li>

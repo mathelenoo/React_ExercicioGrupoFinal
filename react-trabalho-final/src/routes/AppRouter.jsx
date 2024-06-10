@@ -10,7 +10,7 @@ function AppRouter() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/resumo/:id" element={<Resumo />} />
-            <Route path="/adicionar" element={<Adicionar />} />
+            <Route path="/livros" element={<Adicionar />} />
             <Route path="/editar/:id" element={<Editar />} />
         </Routes>
     );
