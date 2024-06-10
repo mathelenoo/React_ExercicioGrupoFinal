@@ -1,19 +1,18 @@
 .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #470A00;
 }
 
 .navbar-list{
-    list-style-type: none;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    list-style-type: none;
 }
 
 .navbar-item{
-    padding:  16px;
-    display: flex;
     background-color: transparent;
-    align-items: baseline;
+    padding: 16px;
 }
 
 .navbar-item p{

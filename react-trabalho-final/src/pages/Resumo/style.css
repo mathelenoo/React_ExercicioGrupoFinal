@@ -30,7 +30,6 @@ main .cards {
 main .cards .card {
     display: block;
     align-items: center;
-    background-color: #2f3644;
 
     padding: 10px 10px;
     width: 95%;
@@ -47,12 +46,11 @@ main .cards .card {
 .card header h2 {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 700;
-    color: #d2daf5;
+    color: #470A00;
     font-size: 1.7rem;
 }
 
 .line {
-    background-color: #3e445b;
     height: 2px;
 }
 
@@ -68,7 +66,7 @@ main .cardInfos {
     font-size: 0.9rem;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 500;
-    color: #b3bacf;
+    color: #470A00;
     margin: 2px;
 }
 
@@ -79,7 +77,7 @@ main .cardInfos {
     font-size: 1.2rem;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 500;
-    color: #b3bacf;
+    color: #470A00;
     margin: 10;
 }
 
@@ -94,7 +92,7 @@ a.cardInfos {
     margin-block: 10px;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 500;
-    color: #3e445b;
+    color: #470A00;
     font-size: 1.3rem;
     border: 0;
     border-radius: 10px;
