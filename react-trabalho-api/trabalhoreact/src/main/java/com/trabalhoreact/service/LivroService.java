@@ -70,10 +70,6 @@ public class LivroService {
 	
 	@Transactional
 	public LivroDTO insert(Livro livro, MultipartFile file) throws IOException {
-		Livro livroBd = livroRepository.findByTitulo(livro.getTitulo());
-		if (livroBd != null) {
-			throw new TituloException("Titulo já existente");
-		}
 		
 		livro = livroRepository.save(livro);
 		capaLivroService.insert(livro, file);

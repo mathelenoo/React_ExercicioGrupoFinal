@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.trabalhoreact.dto.LivroDTO;
 import com.trabalhoreact.model.CapaLivro;
 import com.trabalhoreact.model.Livro;
@@ -63,13 +65,13 @@ public class LivroController {
 	}
 	
 	@PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-	public ResponseEntity<Livro> inserir(@RequestPart MultipartFile file, @Valid @RequestPart Livro livro) throws IOException {
+	public ResponseEntity<Livro> inserir(@RequestPart("file") MultipartFile file, @RequestPart("livro") Livro livro) throws IOException {
 		livroService.insert(livro, file);
 		return ResponseEntity.ok().body(livro);
 	}
 
 	@PutMapping(value = "/{id}", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-	public ResponseEntity<Livro> alterar(@PathVariable Long id, @RequestPart MultipartFile file, @Valid @RequestPart Livro livro) throws IOException {
+	public ResponseEntity<Livro> alterar(@PathVariable Long id, @RequestPart("file") MultipartFile file, @RequestPart("livro") Livro livro) throws IOException {
 		if (!livroRepository.existsById(id)) {
 			return ResponseEntity.notFound().build();
 		}
