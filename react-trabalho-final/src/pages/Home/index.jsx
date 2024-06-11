@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import BookCard from "../../components/BookCard";
 import "../Home/styles.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [booksTemp, setBooks] = useState([]);
@@ -91,39 +92,43 @@ const Home = () => {
   ];
 
   return (
-    <div>
-      <Header />
-      <h1 className="home-title">Home Page - Cards de Sugestão de Livros</h1>
-      <div className="books-container">
-        {/* {books.map(book => (
-          <BookCard key={book.id} book={book} />
-        ))} */}
-
-        {booksTemp.map((book, key) => {
-          return (
-            <div className="card" key={key}>
-              <header>
-                <img src={book.url}/>
-                <h2>{book.titulo}</h2>
-              </header>
-              <div className="line" />
-              <p>{book.sinopse} </p>
-              <div className="line" />
-              <p>{book.numeroPaginas} </p>
-              <div className="line" />
-              <p>{book.categoria} </p>
-              <div className="line" />
-              <p>{book.autor} </p>
-              <div className="line" />
-              <p>{book.editora} </p>
-
+  <div>
+    <Header />
+    <h1 className="home-title">Home Page - Cards de Sugestão de Livros</h1>
+    <div className="books-container">
+      {booksTemp.map((book, key) => {
+        return (
+          <div className="card" key={key}>
+            <header>
+              <img className="imagem" src={book.url} />
+              <div style={{textAlign: 'center'}}>
+              <h2>{book.titulo}</h2></div>
+            </header>
+            <div className="line" />
+            <p><strong>Autor:</strong> {book.autor}</p>
+            <div className="line" />
+            <div style={{textAlign: 'center'}}>
+              <strong>Descrição:</strong>
+              <p style={{textAlign: 'justify'}}>{book.sinopse}</p>
             </div>
-            
-          );
-        })}
-      </div>
+            <div className="line" />
+            <p><strong>Gênero:</strong> {book.categoria} </p>
+
+            <div className="btn-resumo">
+              <Link to={`/resumo/${book.id}`}>
+                <button>Ler resumo</button>
+              </Link>
+            </div>
+          </div>
+        );
+      })}
     </div>
-  );
+  </div>
+);
+
+  
+  
 };
 
 export default Home;
+
