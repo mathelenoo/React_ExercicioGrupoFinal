@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import "./style.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const validationPost = yup.object().shape({
   titulo: yup
@@ -52,7 +52,27 @@ function Adicionar() {
   const [preview, setPreview] = useState(null);
   const [image, setImage] = useState(null);
 
+
+  const [selectedCategoria, setSelectedCategoria] = useState(undefined);
+
   let navigate = useNavigate();
+
+  const categorias = [
+    { id: 1, name: "Ficção Cientifica" },
+    { id: 2, name: "Fantasia" },
+    { id: 3, name: "Romance" },
+    { id: 4, name: "Literatura Classica" },
+    { id: 5, name: "Suspense" },
+    { id: 6, name: "Horror" },
+    { id: 7, name: "Poesia" },
+    { id: 8, name: "Historia" },
+    { id: 9, name: "Biografia" },
+    { id: 10, name: "Autobiografia" },
+  ];
+
+  const handleChange = (e) => {
+    setSelectedCategoria(e);
+  };
 
   const handleImageChange = (e) => {
     const file = e.currentTarget.files[0];
@@ -127,8 +147,22 @@ function Adicionar() {
               <p className="Error-message">{errors.numeroPaginas?.message}</p>
 
               <label htmlFor="categoria">Categoria</label>
-              <input type="text" id="categoria" {...register("categoria")} />
+              <select
+                id="categoria"
+                value={selectedCategoria}
+                onChange={handleChange}
+                {...register("categoria")}
+              >
+                {categorias.map((categoria) => (
+                  <option key={categoria.id} value={categoria.id}>
+                    {categoria.name}
+                  </option>
+                ))}
+                {selectedCategoria}
+              </select>
               <p className="Error-message">{errors.categoria?.message}</p>
+              
+              {/* <input type="text" id="categoria" {...register("categoria")} /> */}
 
               <label htmlFor="sinopse">Sinopse</label>
               <textarea
