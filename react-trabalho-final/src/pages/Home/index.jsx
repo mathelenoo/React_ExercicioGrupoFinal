@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import BookCard from "../../components/BookCard";
 import "../Home/styles.css";
 import axios from "axios";
@@ -123,6 +124,7 @@ const Home = () => {
         );
       })}
     </div>
+    <Footer />
   </div>
 );
 

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import * as yup from "yup";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import "./style.css";
 
 const validationPost = yup.object().shape({
@@ -167,6 +168,7 @@ function Editar() {
           </form>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

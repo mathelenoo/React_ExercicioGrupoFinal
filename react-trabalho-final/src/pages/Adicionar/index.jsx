@@ -4,6 +4,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import "./style.css";
 import { useState } from "react";
 
@@ -164,6 +165,7 @@ function Adicionar() {
           </form>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

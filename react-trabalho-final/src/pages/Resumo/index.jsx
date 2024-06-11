@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./style.css";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 function Resumo() {
     const { id } = useParams();
@@ -48,6 +49,7 @@ function Resumo() {
                     </div>
                 </div>
             </main>
+            <Footer />
         </div>
     );
 }
