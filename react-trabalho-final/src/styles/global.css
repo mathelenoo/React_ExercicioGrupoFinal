@@ -3,7 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
+
+html, body {
   height: 100vh;
   background-color: bisque;
 }
@@ -16,4 +17,3 @@ a {
   text-decoration: none;
   color: inherit;
 }
-

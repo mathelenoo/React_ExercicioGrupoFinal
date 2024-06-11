@@ -4,6 +4,16 @@ body {
   padding: 0;
 }
 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  flex: 1;
+}
+
 .header {
   background-color: #f8f9fa;
   padding: 20px;
@@ -20,7 +30,7 @@ body {
 
 .card {
   border: 1px solid #000; /* Borda preta ao redor do card */
-  background-color:antiquewhite;
+  background-color: antiquewhite;
   border-radius: 8px;
   padding: 20px;
   width: 250px;
@@ -47,6 +57,7 @@ body {
 .card h2 {
   font-size: 18px;
   margin: 10px 0;
+  color: #470a00;
 }
 
 .card p {
