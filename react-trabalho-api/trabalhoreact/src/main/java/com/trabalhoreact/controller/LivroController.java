@@ -2,6 +2,7 @@ package com.trabalhoreact.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
@@ -67,12 +68,18 @@ public class LivroController {
 	}
 
 	@PutMapping(value = "/{id}", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-	public ResponseEntity<Livro> alterar(@PathVariable Long id, @RequestPart("file") MultipartFile file, @RequestPart("livro") Livro livro) throws IOException {
-		if (!livroRepository.existsById(id)) {
+	public ResponseEntity<Livro> alterar(@PathVariable Long id, @RequestPart("livro") Livro livro) throws IOException {
+//		if (!livroRepository.existsById(id)) {
+//			return ResponseEntity.notFound().build();
+//		}
+		Optional<Livro> livroTemp = livroRepository.findById(id);
+		if (livroTemp.isEmpty()){
 			return ResponseEntity.notFound().build();
 		}
+		
 		livro.setId(id);
-		livroService.change(livro, file);
+		livro.setCapa(livroTemp.get().getCapa());
+		livroService.change(livro);
 		return ResponseEntity.ok(livro);
 	}
 	

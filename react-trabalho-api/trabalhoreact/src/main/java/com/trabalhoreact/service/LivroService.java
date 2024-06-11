@@ -77,10 +77,10 @@ public class LivroService {
 	}
 	
 	@Transactional
-	public LivroDTO change(Livro livro, MultipartFile file) throws IOException{
+	public LivroDTO change(Livro livro) throws IOException{
 		
 		livro = livroRepository.save(livro);
-		capaLivroService.change(livro, file);
+//		capaLivroService.change(livro, file);
 		
 		return addImageUrl(livro);
 	}

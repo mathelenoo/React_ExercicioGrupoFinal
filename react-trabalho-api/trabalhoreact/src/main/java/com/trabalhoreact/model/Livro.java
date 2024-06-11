@@ -106,6 +106,14 @@ public class Livro {
 	public void setEditora(String editora) {
 		this.editora = editora;
 	}
+	
+	public CapaLivro getCapa() {
+		return capa;
+	}
+
+	public void setCapa(CapaLivro capa) {
+		this.capa = capa;
+	}
 
 	@Override
 	public int hashCode() {
