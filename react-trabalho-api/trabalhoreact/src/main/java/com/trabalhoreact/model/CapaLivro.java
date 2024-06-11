@@ -4,6 +4,8 @@ import java.sql.Types;
 
 import org.hibernate.annotations.JdbcTypeCode;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,6 +33,7 @@ public class CapaLivro {
 
 	@OneToOne
 	@JoinColumn(name = "id_livro")
+	@JsonBackReference
 	private Livro livro;
 	
 	public CapaLivro() {

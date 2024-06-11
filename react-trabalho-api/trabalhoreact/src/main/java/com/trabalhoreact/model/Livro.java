@@ -2,6 +2,8 @@ package com.trabalhoreact.model;
 
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -49,6 +51,7 @@ public class Livro {
 	private String editora;
 	
 	@OneToOne(mappedBy = "livro", cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonManagedReference
 	private CapaLivro capa;
 
 	public Long getId() {
