@@ -66,31 +66,14 @@ function Editar() {
       .catch(() => console.log("Erro na requisição!"));
   }, []);
 
-  const addPost = (data) => {
-    const formData = new FormData();
-    if (image) {
-      const file = new Blob([image], {
-        type: image.type,
-      });
-      formData.append("file", file);
-    }
-    formData.append(
-      "livro",
-      new Blob([JSON.stringify({ ...data, imagemUrl: livro.imagemUrl })], { type: "application/json" })
-    );
-  
+  const addPost = (data) =>
     axios
-      .put(`http://localhost:8080/livros/${id}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
+      // .put(`http://localhost:8080/livros/${id}`)
+      .put(`https://6662522a62966e20ef0839e2.mockapi.io/livros/${id}`, data)
       .then(() => {
         navigate("/");
       })
       .catch(() => console.log("Falha na requisição"));
-  };
-  
 
   const {
     register,
@@ -154,23 +137,18 @@ function Editar() {
               />
               <p className="Error-message">{errors.sinopse?.message}</p>
 
-              <div>
-  <label>Imagem</label>
-  <input
-    id="image"
-    type="file"
-    accept="image/*"
-    onChange={(e) => handleImageChange(e)}
-    onClick={(e) => {
-      e.target.value = null;
-    }}
-    {...register("image")}
-  />
-  <p className="Error-message">{errors.imagem?.message}</p>
-  {livro.imagemUrl && (
-    <img src={livro.imagemUrl} alt="Imagem do Livro" />
-  )}
-</div>
+              {/* <div>
+                <label>Imagem</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleImageChange(e)}
+                  onClick={(e) => {
+                    e.target.value = null;
+                  }}
+                />
+                <p className="Error-message">{errors.imagem?.message}</p>
+              </div> */}
 
               <div className="cardInfos">
                 <button type="submit">Enviar</button>
