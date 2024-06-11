@@ -51,28 +51,42 @@ textarea {
   padding-top: 10px;
 }
 
-.card-add{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card-add button{
-    font-family: Heebo;
-    font-weight: 800;
-    font-size: 1.3rem;
+.card-add button {
+  font-family: Heebo;
+  font-weight: 800;
+  font-size: 1.3rem;
 
-    padding: 5px 50px;
-    color: #fff;
-    background-color: #470A00;
+  padding: 5px 50px;
+  color: #fff;
+  background-color: #470A00;
 
-    border: 0;
-    border-radius: 10px;
+  border: 0;
+  border-radius: 10px;
 
-    cursor: pointer;
+  cursor: pointer;
 
 }
 
 .error-message {
-    color: rgb(240, 47, 47);
+  color: rgb(240, 47, 47);
+}
+
+.selectAdicionar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px 20px;
+  width: 100%;
 }

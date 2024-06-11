@@ -148,6 +148,7 @@ function Adicionar() {
 
               <label htmlFor="categoria">Categoria</label>
               <select
+                className="selectAdicionar"
                 id="categoria"
                 value={selectedCategoria}
                 onChange={handleChange}
@@ -161,7 +162,7 @@ function Adicionar() {
                 {selectedCategoria}
               </select>
               <p className="Error-message">{errors.categoria?.message}</p>
-              
+
               {/* <input type="text" id="categoria" {...register("categoria")} /> */}
 
               <label htmlFor="sinopse">Sinopse</label>

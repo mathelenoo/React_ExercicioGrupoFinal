@@ -191,6 +191,7 @@ function Editar() {
 
               <label htmlFor="categoria">Categoria</label>
               <select
+                className="selectEditar"
                 id="categoria"
                 defaultValue={responseCategoria}
                 value={selectedCategoria}

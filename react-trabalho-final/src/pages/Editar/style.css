@@ -150,3 +150,20 @@ form {
     background-color: rgba(175, 10, 10, 0.76);
     color: aliceblue;
 }
+
+.selectEditar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    border: 1.2px solid #470A00;
+    color: #470A00;
+    background-color: rgb(219, 197, 170);
+    font-size: 1.3rem;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 100%;
+}

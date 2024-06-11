@@ -49,6 +49,9 @@ main .cards .card {
     color: #470A00;
     font-size: 1.7rem;
 }
+.card p{
+    color: #470A00;
+}
 
 .line {
     height: 2px;
@@ -80,6 +83,7 @@ main .cardInfos {
     color: #470A00;
     margin: 10;
 }
+
 
 a.cardInfos {
     align-items: center;
