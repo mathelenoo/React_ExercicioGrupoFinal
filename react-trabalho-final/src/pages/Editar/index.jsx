@@ -59,21 +59,25 @@ function Editar() {
   useEffect(() => {
     axios
       .get(`http://localhost:8080/livros/${id}`)
-      // .get(`https://6662522a62966e20ef0839e2.mockapi.io/livros/${id}`)
       .then((response) => {
         reset(response.data);
       })
       .catch(() => console.log("Erro na requisição!"));
   }, []);
 
-  const addPost = (data) =>
+  const addPost = (data) => {
+    const formData = new FormData();
+    formData.append(
+      "livro",
+      new Blob([JSON.stringify(data)], { type: "application/json" })
+    );
     axios
-      // .put(`http://localhost:8080/livros/${id}`)
-      .put(`https://6662522a62966e20ef0839e2.mockapi.io/livros/${id}`, data)
+      .put(`http://localhost:8080/livros/${id}`, formData)
       .then(() => {
         navigate("/");
       })
       .catch(() => console.log("Falha na requisição"));
+    }
 
   const {
     register,
