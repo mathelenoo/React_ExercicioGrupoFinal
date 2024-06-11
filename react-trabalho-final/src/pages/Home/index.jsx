@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import BookCard from "../../components/BookCard";
-import "../Home/styles.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "../Home/styles.css";
 
 const Home = () => {
   const [booksTemp, setBooks] = useState([]);
@@ -93,44 +93,47 @@ const Home = () => {
   ];
 
   return (
-  <div>
-    <Header />
-    <h1 className="home-title">Home Page - Cards de Sugestão de Livros</h1>
-    <div className="books-container">
-      {booksTemp.map((book, key) => {
-        return (
-          <div className="card" key={key}>
-            <header>
-              <img className="imagem" src={book.url} />
-              <div style={{textAlign: 'center'}}>
-              <h2>{book.titulo}</h2></div>
-            </header>
-            <div className="line" />
-            <p><strong>Autor:</strong> {book.autor}</p>
-            <div className="line" />
-            <div style={{textAlign: 'center'}}>
-              <strong>Descrição:</strong>
-              <p style={{textAlign: 'justify'}}>{book.sinopse}</p>
-            </div>
-            <div className="line" />
-            <p><strong>Gênero:</strong> {book.categoria} </p>
+    <div className="page-container">
+      <Header />
+        <h1 className="home-title">Home Page - Cards de Sugestão de Livros</h1>
+      <main className="content-wrap">
+        <div className="books-container">
+          {booksTemp.map((book, key) => {
+            return (
+              <div className="card" key={key}>
+                <div>
+                  <img className="imagem" src={book.url} />
+                  <div style={{ textAlign: "center" }}>
+                    <h2>{book.titulo}</h2>
+                  </div>
+                </div>
+                <div className="line" />
+                <p>
+                  <strong>Autor:</strong> {book.autor}
+                </p>
+                <div className="line" />
+                <div style={{ textAlign: "center" }}>
+                  <strong>Descrição:</strong>
+                  <p style={{ textAlign: "justify" }}>{book.sinopse}</p>
+                </div>
+                <div className="line" />
+                <p>
+                  <strong>Gênero:</strong> {book.categoria}{" "}
+                </p>
 
-            <div className="btn-resumo">
-              <Link to={`/resumo/${book.id}`}>
-                <button>Ler resumo</button>
-              </Link>
-            </div>
-          </div>
-        );
-      })}
+                <div className="btn-resumo">
+                  <Link to={`/resumo/${book.id}`}>
+                    <button>Ler resumo</button>
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </main>
+      <Footer />
     </div>
-    <Footer />
-  </div>
-);
-
-  
-  
+  );
 };
 
 export default Home;
-
