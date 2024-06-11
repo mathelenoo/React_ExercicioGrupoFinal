@@ -67,13 +67,13 @@ function Editar() {
   }, []);
 
   const addPost = (data) => {
-    const formData = new FormData();
-    formData.append(
-      "livro",
-      new Blob([JSON.stringify(data)], { type: "application/json" })
-    );
+    // const formData = new FormData();
+    // formData.append(
+    //   "livro",
+    //   new Blob([JSON.stringify(data)], { type: "application/json" })
+    // );
     axios
-      .put(`http://localhost:8080/livros/${id}`, formData)
+      .put(`http://localhost:8080/livros/${id}`, data) //formData
       .then(() => {
         navigate("/");
       })
